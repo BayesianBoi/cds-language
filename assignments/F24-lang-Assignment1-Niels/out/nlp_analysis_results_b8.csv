@@ -1,4 +1,0 @@
-Filename,RelFreq NOUN,RelFreq VERB,RelFreq ADJ,RelFreq ADV,Unique PER,Unique LOC,Unique ORG
-file1.txt,2052.0,1221.1,809.2,411.8,4,0,1
-file2.txt,1893.0,1083.6,829.4,662.2,5,0,0
-file3.txt,1943.8,1348.3,696.6,483.1,0,0,2
