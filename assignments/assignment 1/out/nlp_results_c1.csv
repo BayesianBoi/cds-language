@@ -1,0 +1,8 @@
+Filename,RelFreq NOUN,RelFreq VERB,RelFreq ADJ,RelFreq ADV,Unique PER,Unique LOC,Unique ORG
+file1.txt,1573.6,933.6,472.9,403.6,38,0,5
+file2.txt,1742.5,816.4,580.8,284.3,27,0,3
+file3.txt,1177.7,1021.6,649.2,508.3,17,0,8
+file4.txt,1379.3,974.8,563.7,484.1,26,0,6
+file5.txt,1092.9,1163.2,398.1,288.8,18,0,3
+file6.txt,1231.9,1025.5,461.1,426.7,14,0,5
+file7.txt,1321.8,1219.7,434.2,408.7,15,0,5
