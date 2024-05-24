@@ -71,7 +71,7 @@ Relative frequency of adjectives | Relative frequency of adverbs
 *Please note that these plots are purely descriptive and no statistical analysis has been conducted. They are simply an example use-case of the extracted linguistic features.*
 
 
-### Carbon Emissions Tracking
+## Carbon Emissions Tracking
 We used CodeCarbon to track the carbon-emissions caused by running this analysis. The CSV detailing the emissions can be found in the `out` folder. The detailed results of the emissions will be discussed in Assignment 5.
 
 ## Limitations and possible improvements
