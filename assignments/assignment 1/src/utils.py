@@ -77,4 +77,4 @@ def stop_and_save_tracker(tracker, output_folder):
     with open(output_path, mode="w", newline="") as file:
         writer = csv.writer(file)
         writer.writerow(["Script", "Emissions (kg CO2eq)"]) # even though it is only one script here, I want to keep the approach consistent between the scripts
-        writer.writerow([os.path.basename(__file__), emissions]) # writing down the emissions for this script (even though this function is optimised for multiple scripts)
+        writer.writerow(["nlp_analysis.py", emissions]) # makes rows with script name and emission (doesnt really make sense to do it like this but again I want to keep it consistent between the scripts)
