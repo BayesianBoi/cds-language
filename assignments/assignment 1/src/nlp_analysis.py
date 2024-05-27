@@ -1,17 +1,15 @@
 import pandas as pd
 import spacy
 import os
-from utils import calculate_metrics, remove_metadata
-from codecarbon import EmissionsTracker
+from utils import calculate_metrics, remove_metadata, start_tracker, stop_and_save_tracker
 import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Main pipeline
 def main():
-    output_folder = "out" # defining output folder
-    os.makedirs(output_folder, exist_ok=True) # create the out folder if it does not exist
-    tracker = EmissionsTracker(output_dir=output_folder, output_file="emissions_assignment1.csv") # set up the emissions tracker
-    tracker.start() # starting the emission tracker
+    output_folder = "out"  # defining output folder
+    os.makedirs(output_folder, exist_ok=True)  # create the out folder if it does not exist
+    tracker = start_tracker()  # start the emission tracker
 
     # downloading the medium spacy NLP model
     os.system("python -m spacy download en_core_web_md")
@@ -38,7 +36,7 @@ def main():
         for file in sorted(os.listdir(subfolder_path)):
             file_path = os.path.join(subfolder_path, file)
             # using ISO-8859-1 which ensures that all of the files can be loaded (some of them contain characters which otherwise cannot be loaded)
-            with open(file_path, "r", encoding = "ISO-8859-1") as file:
+            with open(file_path, "r", encoding="ISO-8859-1") as file:
                 # reading the text files and appending them to the list
                 text = file.read()
                 text = remove_metadata(text)
@@ -59,10 +57,10 @@ def main():
         # Store the dataframe from each subfolder in the dictionary
         subfolder_metrics[subfolder] = subfolder_df
 
-    # concatenete all the dataframes for the plot comparison comparing pos between the three styles of assignments
+    # concatenate all the dataframes for the plot comparison comparing POS between the three styles of assinments
     all_metrics_df = pd.concat(subfolder_metrics.values(), keys=subfolder_metrics.keys(), names=['Subfolder', 'Index']).reset_index(level='Subfolder')
 
-    # some of the essay are explicitly written in specific styles: defining the subfolders which are explicitly a style: (based on the details of the data set found in the /in folder)
+    # some of the essays are explicitly written in specific styles: defining the subfolders which are explicitly a style: (based on the details of the data set found in the /in folder)
     personal_subfolders = ['a1', 'a3']
     formal_subfolders = ['a2', 'a4', 'b1']
     academic_subfolders = ['b4', 'b5']
@@ -89,8 +87,8 @@ def main():
     
     for pos_tag in pos_tags:
         plt.figure(figsize=(10, 6))
-        sns.barplot(data=all_metrics_df, x='Style', y=pos_tag, errorbar= None, palette="Blues")
-        plt.title(f'Comparison of {pos_tag} between Personal, Formal, and Academic Styles')
+        sns.barplot(data=all_metrics_df, x='Style', y=pos_tag, errorbar=None, palette="Blues")
+        plt.title(f'Comparison of {pos_tag} between personal, formal, and academic Styles')
         plt.xlabel('Style')
         plt.ylabel(pos_tag)
         plt.savefig(os.path.join(output_folder, f'{pos_tag}_comparison.png'))
@@ -102,9 +100,8 @@ def main():
         df.to_csv(output_path, index=False)
         print("CSV saved")
 
-    # stop the emissions tracker and output the results
-    emissions = tracker.stop()
-    print(f"Total CO₂ emissions for this assignment: {emissions} kg")
+    # stop the emissions tracker
+    stop_and_save_tracker(tracker, output_folder)
 
 if __name__ == "__main__":
     main()
