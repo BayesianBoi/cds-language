@@ -75,7 +75,7 @@ The following plots show the confusion matrices for both models:
 We used CodeCarbon to track the carbon-emissions caused by running this analysis. The CSV detailing the emissions can be found in the `out` folder. The detailed results of the emissions will be discussed in Assignment 5.
 
 ## Limitations and possible improvements
-Both of the models achieved similar accuracy and performed quite well in classifying the fake news dataset. However, there are several limitations and areas for potential improvements.
+Both of the models achieved almost exactly the same accuracy in classifying the fake news dataset. However, there are several limitations and areas for potential improvements.
 ### Limitations
 - **Model simplicity:** Both models are relatively simple. They may not capture complex patterns in the data as effectively as more advanced models
 
