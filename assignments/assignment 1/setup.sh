@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
 # Create a virtual environment
-python3 -m venv EnvLang2
+python3 -m venv EnvLang1
 
 # Activate the virtual environment
-source EnvLang2/bin/activate
+source EnvLang1/bin/activate
 
 # Upgrade pip
 pip install --upgrade pip
