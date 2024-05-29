@@ -1,0 +1,4 @@
+Script,Emissions (kg CO2)
+vectorize_data.py,0.000153422
+logistic_regression.py,1.991854604418028e-06
+neural_network.py,0.000293845
