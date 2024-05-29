@@ -14,23 +14,23 @@ def main():
     season_dist_file = os.path.join(output_dir, "season_dist.csv")
     data = pd.read_csv(season_dist_file)  # loading the distributions from the processed script
     for season in sorted(data["Season"].unique()):  # go through each season and plot the sentiment for that season
-        season_data = data[data["Season"] == season].set_index('Emotion')  # Filter data for the current season and set index to emotion
+        season_data = data[data["Season"] == season].set_index("Emotion")  # Filter data for the current season and set index to emotion
 
         # Plot and save the distribution
         plt.figure(figsize=(10, 5))
-        season_data['Average Score'].plot.barh() 
+        season_data["Average Score"].plot.barh() 
         plt.title(f"Emotion distribution in season {season}")
         plt.xlabel("Average score")
         plt.ylabel("Emotion")
-        plt.grid(axis='x')
+        plt.grid(axis="x")
         plt.savefig(os.path.join(output_dir, f"{season}_dist.png"))
         plt.close()
 
     # Plot emotion trends over all seasons
     emotion_trends_file = os.path.join(output_dir, "emotion_trends.csv")
     data = pd.read_csv(emotion_trends_file)  # loads the trends from the processed csv
-    seasons = data['Season'].unique()  # get unique seasons
-    emotions = [col for col in data.columns if col != 'Season']  # get list of emotions
+    seasons = data["Season"].unique()  # get unique seasons
+    emotions = [col for col in data.columns if col != "Season"]  # get list of emotions
 
     plt.figure(figsize=(12, 7)) 
     for emotion in emotions:  # goes through each emotion one at a time
