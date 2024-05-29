@@ -12,7 +12,7 @@ The objective of this assignment is to:
    - Plot the relative frequency of each emotion across all seasons
 
 ## Data source
-The dataset used in this assignment is the `Game_of_Thrones_Script.csv`. It should be placed in the `in`-folder before proceding with the analysis
+The dataset used in this assignment is the `Game_of_Thrones_Script.csv`. It should be placed in the `in` folder before proceding with the analysis
 
 ## Steps for running the analysis
 
