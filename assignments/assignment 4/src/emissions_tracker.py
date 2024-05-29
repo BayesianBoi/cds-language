@@ -4,7 +4,7 @@ from codecarbon import EmissionsTracker
 
 def start_tracker():
     """Start tracking the emission of the script."""
-    tracker = EmissionsTracker(log_level='error')  # setting up the tracker and disable logging messages
+    tracker = EmissionsTracker(log_level="error")  # setting up the tracker and disable logging messages
     tracker.start()  # starting the tracking
     return tracker
 
