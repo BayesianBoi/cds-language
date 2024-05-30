@@ -1,7 +1,7 @@
 # Assignment 4 - Emotion analysis with pretrained language models
 
 ## Repository overview
-This repository contains Python scripts for doing emotion classification of the television show *Game of Thrones* using the pretrained emotion classification model from HuggingFace. The analysis focuses on predicting emotion scores for each line in the scripts and investigating how the emotional profile changes over the course of the series.
+This repository contains Python scripts for doing emotion classification of the television show *Game of Thrones* using a pretrained emotion classification model from HuggingFace. The analysis focuses on predicting emotion scores for each line in the script and investigating how the emotions change over the course of the series.
 
 ### Assignment objective
 The objective of this assignment is to:
@@ -81,14 +81,14 @@ This file lists the top characters per emotion for each season:
 | Season 3  | roslin          | unsullied         | girl           | black walder     | pyp                       | hodor           |
 | Season 4  | prisoner        | women   *          | marei          | ranger           | slaves  *                  | whore           |
 | Season 5  | kevan lannister | walda             | survivor       | braavosi man     | waitress                  | lollys stokeworth |
-| Season 6  | othell yarwick  | crowd             | karstark       | listeners        | mistress                  | bryndel         |
+| Season 6  | othell yarwick  | crowd *            | karstark       | listeners        | mistress                  | bryndel         |
 | Season 7  | unsullied       | archers           | waldery frey   | drogon           | edd                       | soldier         |
 | Season 8  | podrick         | all  *             | lannister soldier | melisandre    | owen                      | both   *         |
 
-*Note the marked`*` characters are referring to a group of people
+*Note the marked `*` characters are referring to a group of people*
 
-### Carbon mmissions tracking
-We used CodeCarbon to track the carbon emissions caused by running this analysis. The CSV detailing the emissions can be found in the `out` folder.
+### Carbon emissions tracking
+We used CodeCarbon to track the carbon-emissions caused by running this analysis. The CSV detailing the emissions can be found in the `out` folder. The detailed results of the emissions will be discussed in Assignment 5.
 
 ### Discussion of results
 As a disclaimer, I have actually not seen Game of Thrones. If you had seen the show, you could probably look at the results and go "aha, that makes sense".
