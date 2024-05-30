@@ -6,9 +6,11 @@ import os
 from codecarbon import EmissionsTracker
 import csv
 
+"""This script contains helper functions for the nlp-analysis script and also the emission tracking function"""
+
 def remove_metadata(text):
     """
-    Removes the metadata in pointed brackets <> that is in most of the texts
+    Removes the metadata in pointed brackets <> that is in all of the texts
     """
     return re.sub(r"<[^>]*>", "", text)
 
